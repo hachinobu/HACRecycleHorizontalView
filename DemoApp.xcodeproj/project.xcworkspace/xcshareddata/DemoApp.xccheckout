@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>47F112C2-673B-4D56-A735-72A45CBC3AB9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DemoApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4DA0B70E-5D2A-47E3-95B9-588191210BFD</key>
+		<string>https://github.com/hachinobu/HACRecycleHorizontalView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DemoApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4DA0B70E-5D2A-47E3-95B9-588191210BFD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hachinobu/HACRecycleHorizontalView.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4DA0B70E-5D2A-47E3-95B9-588191210BFD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4DA0B70E-5D2A-47E3-95B9-588191210BFD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HACRecycleHorizontalView</string>
+		</dict>
+	</array>
+</dict>
+</plist>
