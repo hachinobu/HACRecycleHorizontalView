@@ -25,6 +25,7 @@
 		C2124B92193C690A00791AD9 /* HACContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2124B8D193C690A00791AD9 /* HACContentView.m */; };
 		C2124B93193C690A00791AD9 /* HACFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2124B8F193C690A00791AD9 /* HACFrameView.m */; };
 		C2124B96193C693500791AD9 /* HACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2124B94193C693500791AD9 /* HACViewController.m */; };
+		C296132C1951223B005FF91F /* HACContentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2124B84193C681600791AD9 /* HACContentObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,10 +180,10 @@
 		C2124B83193C67E100791AD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2124B87193C681600791AD9 /* HACContentObject.h */,
 				C2124B84193C681600791AD9 /* HACContentObject.m */,
 				C2124B85193C681600791AD9 /* HACDeviceUtils.h */,
 				C2124B86193C681600791AD9 /* HACDeviceUtils.m */,
-				C2124B87193C681600791AD9 /* HACContentObject.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2124B6E193C676000791AD9 /* DemoAppTests.m in Sources */,
+				C296132C1951223B005FF91F /* HACContentObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +502,7 @@
 				C2124B73193C676000791AD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2124B74193C676000791AD9 /* Build configuration list for PBXNativeTarget "DemoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +511,7 @@
 				C2124B76193C676000791AD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

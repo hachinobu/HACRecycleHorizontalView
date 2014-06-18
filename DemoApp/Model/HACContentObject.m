@@ -10,34 +10,37 @@
 
 @interface HACContentObject ()
 
+@property (nonatomic, strong) NSIndexPath *contentIndexPath;
 @property (nonatomic, strong, readwrite) NSDictionary *contentsDic;
 
 @end
 
 @implementation HACContentObject
 
-- (instancetype)initWithIndex:(NSUInteger)index
+- (void)createContentsWithIndexPath:(NSIndexPath *)indexPath
 {
-    self = [super init];
-    if (self) {
-        _contentsDic = [self setupContentsDicWithIndex:index];
-    }
-    return self;
-}
-
-- (NSDictionary *)setupContentsDicWithIndex:(NSInteger)idx
-{
-    NSMutableDictionary *contentsDic = [NSMutableDictionary dictionaryWithCapacity:idx];
-    for (NSInteger i = 0; i < idx; i++) {
+    self.contentIndexPath = indexPath;
+    NSMutableDictionary *contentsDic = [NSMutableDictionary dictionary];
+    for (NSInteger i = 0; i < _contentIndexPath.section; i++) {
         NSMutableArray *contents = [NSMutableArray array];
-        for (NSInteger j = 0; j < 6; j++) {
-            NSString *content = [NSString stringWithFormat:@"%ld - %ld", i + 1, j+ 1];
+        for (NSInteger j = 0; j < _contentIndexPath.row; j++) {
+            NSString *content = [NSString stringWithFormat:@"%ld - %ld", i + 1, j + 1];
             [contents addObject:content];
         }
         contentsDic[@(i)] = contents;
     }
     
-    return [contentsDic copy];
+    self.contentsDic = [contentsDic copy];
+}
+
+- (NSUInteger)frameCount
+{
+    return _contentIndexPath.section;
+}
+
+- (NSUInteger)contentCount
+{
+    return _contentIndexPath.row;
 }
 
 @end

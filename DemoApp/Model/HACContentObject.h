@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong, readonly) NSDictionary *contentsDic;
 
-- (instancetype)initWithIndex:(NSUInteger)index;
+- (void)createContentsWithIndexPath:(NSIndexPath *)indexPath;
+- (NSUInteger)frameCount;
+- (NSUInteger)contentCount;
 
 @end

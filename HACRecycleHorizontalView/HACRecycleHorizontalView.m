@@ -83,6 +83,14 @@ static CGFloat const HACContentViewHeight = 70.0f;
     return 0;
 }
 
+- (NSInteger)maxContentCount
+{
+    if ([_dataSource respondsToSelector:@selector(contentCount)]) {
+        return [_dataSource contentCount];
+    }
+    return 0;
+}
+
 - (NSArray *)contentsWithFrameNumber:(NSNumber *)num
 {
     if ([_dataSource respondsToSelector:@selector(contentsWithFrameNumber:)]) {
@@ -112,7 +120,10 @@ static CGFloat const HACContentViewHeight = 70.0f;
     self.reusableContentViews = [NSMutableSet set];
     
     frameCount = [self contentFrameCount];
-    self.contentSize = CGSizeMake(frameCount * HACOneContentWidth, CGRectGetHeight(self.frame));
+    NSInteger contentCount = [self maxContentCount];
+    CGFloat statusBarHeight = MIN([UIApplication sharedApplication].statusBarFrame.size.height, [UIApplication sharedApplication].statusBarFrame.size.width);
+    CGFloat height = HACFrameViewHeight + (HACContentViewHeight + HACMarginTop) * contentCount + statusBarHeight + 10;
+    self.contentSize = CGSizeMake(frameCount * HACOneContentWidth, height);
     
     for (NSInteger i = 0; i < frameCount; i++) {
         [self makeViewWithNumber:i isHead:NO];
@@ -122,6 +133,7 @@ static CGFloat const HACContentViewHeight = 70.0f;
             break;
         }
     }
+    
 }
 
 - (void)makeViewWithNumber:(NSInteger)num isHead:(BOOL)isHead
@@ -274,12 +286,12 @@ static CGFloat const HACContentViewHeight = 70.0f;
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.contentOffset.x <= 0) {
-        self.contentOffset = CGPointZero;
+    if (self.contentOffset.x < 0) {
+        self.contentOffset = CGPointMake(.0, scrollView.contentOffset.y);
     }
-    else if (self.contentOffset.x + CGRectGetWidth(self.frame) >= HACOneContentWidth * frameCount) {
+    else if (self.contentOffset.x + CGRectGetWidth(self.frame) > HACOneContentWidth * frameCount) {
         CGFloat lastPointX = scrollView.contentSize.width - CGRectGetWidth(self.frame) + 1.0f;
-        self.contentOffset = CGPointMake(lastPointX, .0f);
+        self.contentOffset = CGPointMake(lastPointX, scrollView.contentOffset.y);
     }
     
     [self reusableSettingOutSideDisplayView];

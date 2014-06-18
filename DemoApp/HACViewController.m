@@ -48,7 +48,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.contentObject = [[HACContentObject alloc] initWithIndex:100];
+    self.contentObject = [[HACContentObject alloc] init];
+    [_contentObject createContentsWithIndexPath:[NSIndexPath indexPathForRow:10 inSection:100]];
     HACRecycleHorizontalView *recycleView = [[HACRecycleHorizontalView alloc] initWithFrame:self.view.frame];
     recycleView.dataSource = self;
     [self.baseView addSubview:recycleView];
@@ -63,7 +64,12 @@
 #pragma mark - HACRecycleScrollViewDataSource
 - (NSUInteger)frameCount
 {
-    return [_contentObject.contentsDic count];
+    return [_contentObject frameCount];
+}
+
+- (NSUInteger)contentCount
+{
+    return [_contentObject contentCount];
 }
 
 - (NSArray *)contentsWithFrameNumber:(NSNumber *)num

@@ -20,6 +20,7 @@
 @protocol HACRecycleScrollViewDataSource <NSObject>
 
 - (NSUInteger)frameCount;
+- (NSUInteger)contentCount;
 - (NSArray *)contentsWithFrameNumber:(NSNumber *)num;
 
 @end
