@@ -35,11 +35,17 @@
 
 - (NSUInteger)frameCount
 {
+    if (!_contentIndexPath) {
+        return 0;
+    }
     return _contentIndexPath.section;
 }
 
 - (NSUInteger)contentCount
 {
+    if (!_contentIndexPath) {
+        return 0;
+    }
     return _contentIndexPath.row;
 }
 
